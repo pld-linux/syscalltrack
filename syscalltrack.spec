@@ -12,7 +12,7 @@ Version:	0.82
 Release:	0.1
 License:	GPL v2
 Group:		Networking/Utilities
-Source0:	http://dl.sourceforge.net/sourceforge/syscalltrack/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/syscalltrack/%{name}-%{version}.tar.gz
 # Source0-md5:	a090234f42e7d97be43eaca1b0eab2c7
 %{?with_dist_kernel:BuildRequires: kernel-headers}
 URL:		http://syscalltrack.sourceforge.net/
@@ -32,6 +32,17 @@ do things that are impossible to do with the ptrace mechanism, because
 its core operates in kernel space.
 
 %description -l pl
+syscalltrack jest zrobiony jako para modu³ów j±dra Linuksa i
+wspieraj±cego ¶rodowiska w przestrzeni u¿ytkownika umo¿liwiaj±cego
+przechwytywanie, logowanie i ewentualnie podejmowania akcji przy
+wywo³aniach systemowych pasuj±cych do kryteriów zdefiniowanych przez
+u¿ytkownika. syscalltrack mo¿e pracowaæ w "tweezers mode", gdzie
+¶ledzone s± tylko pewne operacje, takie jak "tylko ¶ledzenie i
+logowanie prób usuniêcia /etc/passwd", albo w trybie kompatybilnym ze
+strace(1), gdzie ¶ledzone s± wszystkie obs³ugiwane wywo³ania
+systemowe. syscalltrack mo¿e robiæ rzeczy niemo¿liwe do zrobienia
+przy u¿yciu mechanizmu ptraec, poniewa¿ jego rdzeñ dzia³a w
+przestrzeni j±dra.
 
 %package -n kernel-misc-syscalltrack
 Summary:	syscalltrack Linux kernel module
@@ -67,7 +78,7 @@ Modu³y j±dra Linuksa SMP syscalltrack.
 %{__autoconf}
 %{__autoheader}
 %configure \
-	--with-linux=/usr/src/linux
+	--with-linux=%{_kernelsrcdir}
 %{__make}
 
 %install
@@ -84,7 +95,8 @@ install utils/sctdbg/sctdbg $RPM_BUILD_ROOT%{_bindir}
 install utils/sctlog/sctlog $RPM_BUILD_ROOT%{_bindir}
 install module/sct_*load $RPM_BUILD_ROOT%{_bindir}
 
-%{__make} install.doc MANDIR=$RPM_BUILD_ROOT/%{_mandir}/man1
+%{__make} install.doc \
+	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -111,6 +123,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 /lib/modules/%{_kernel_ver}/misc/sct_*.o*
 
-%files -n kernel-smp-misc-syscalltrack
-%defattr(644,root,root,755)
+#%files -n kernel-smp-misc-syscalltrack
+#%defattr(644,root,root,755)
 #/lib/modules/%{_kernel_ver}smp/misc/sct_*.o*
