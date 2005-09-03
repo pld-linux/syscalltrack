@@ -17,6 +17,7 @@ Source0:	http://dl.sourceforge.net/syscalltrack/%{name}-%{version}.tar.gz
 %{?with_dist_kernel:BuildRequires: kernel-headers}
 URL:		http://syscalltrack.sourceforge.net/
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	%{kgcc_package}
 BuildRequires:	rpmbuild(macros) >= 1.118
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
