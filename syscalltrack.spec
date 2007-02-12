@@ -6,7 +6,7 @@
 %bcond_without	dist_kernel	# without distribution kernel
 #
 Summary:	Utility for logging and taking action upon system calls
-Summary(pl.UTF-8):   Narzędzia do logowania i podejmowania akcji na skutek wywołań systemowych
+Summary(pl.UTF-8):	Narzędzia do logowania i podejmowania akcji na skutek wywołań systemowych
 Name:		syscalltrack
 Version:	0.82
 Release:	0.1
@@ -48,7 +48,7 @@ przestrzeni jądra.
 
 %package -n kernel-misc-syscalltrack
 Summary:	syscalltrack Linux kernel module
-Summary(pl.UTF-8):   Moduł jądra Linuksa syscalltrack
+Summary(pl.UTF-8):	Moduł jądra Linuksa syscalltrack
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_up}
 Requires(post,postun):	/sbin/depmod
@@ -61,7 +61,7 @@ Moduły jądra Linuksa syscalltrack.
 
 %package -n kernel-smp-misc-syscalltrack
 Summary:	syscalltrack Linux SMP kernel module
-Summary(pl.UTF-8):   Moduł jądra Linuksa SMP syscalltrack
+Summary(pl.UTF-8):	Moduł jądra Linuksa SMP syscalltrack
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_smp}
 Requires(post,postun):	/sbin/depmod
