@@ -6,7 +6,7 @@
 %bcond_without	dist_kernel	# without distribution kernel
 #
 Summary:	Utility for logging and taking action upon system calls
-Summary(pl):	Narzêdzia do logowania i podejmowania akcji na skutek wywo³añ systemowych
+Summary(pl.UTF-8):   NarzÄ™dzia do logowania i podejmowania akcji na skutek wywoÅ‚aÅ„ systemowych
 Name:		syscalltrack
 Version:	0.82
 Release:	0.1
@@ -33,22 +33,22 @@ where all of the supported system calls are traced. syscalltrack can
 do things that are impossible to do with the ptrace mechanism, because
 its core operates in kernel space.
 
-%description -l pl
-syscalltrack jest zrobiony jako para modu³ów j±dra Linuksa i
-wspieraj±cego ¶rodowiska w przestrzeni u¿ytkownika umo¿liwiaj±cego
+%description -l pl.UTF-8
+syscalltrack jest zrobiony jako para moduÅ‚Ã³w jÄ…dra Linuksa i
+wspierajÄ…cego Å›rodowiska w przestrzeni uÅ¼ytkownika umoÅ¼liwiajÄ…cego
 przechwytywanie, logowanie i ewentualnie podejmowania akcji przy
-wywo³aniach systemowych pasuj±cych do kryteriów zdefiniowanych przez
-u¿ytkownika. syscalltrack mo¿e pracowaæ w "tweezers mode", gdzie
-¶ledzone s± tylko pewne operacje, takie jak "tylko ¶ledzenie i
-logowanie prób usuniêcia /etc/passwd", albo w trybie kompatybilnym ze
-strace(1), gdzie ¶ledzone s± wszystkie obs³ugiwane wywo³ania
-systemowe. syscalltrack mo¿e robiæ rzeczy niemo¿liwe do zrobienia
-przy u¿yciu mechanizmu ptraec, poniewa¿ jego rdzeñ dzia³a w
-przestrzeni j±dra.
+wywoÅ‚aniach systemowych pasujÄ…cych do kryteriÃ³w zdefiniowanych przez
+uÅ¼ytkownika. syscalltrack moÅ¼e pracowaÄ‡ w "tweezers mode", gdzie
+Å›ledzone sÄ… tylko pewne operacje, takie jak "tylko Å›ledzenie i
+logowanie prÃ³b usuniÄ™cia /etc/passwd", albo w trybie kompatybilnym ze
+strace(1), gdzie Å›ledzone sÄ… wszystkie obsÅ‚ugiwane wywoÅ‚ania
+systemowe. syscalltrack moÅ¼e robiÄ‡ rzeczy niemoÅ¼liwe do zrobienia
+przy uÅ¼yciu mechanizmu ptraec, poniewaÅ¼ jego rdzeÅ„ dziaÅ‚a w
+przestrzeni jÄ…dra.
 
 %package -n kernel-misc-syscalltrack
 Summary:	syscalltrack Linux kernel module
-Summary(pl):	Modu³ j±dra Linuksa syscalltrack
+Summary(pl.UTF-8):   ModuÅ‚ jÄ…dra Linuksa syscalltrack
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_up}
 Requires(post,postun):	/sbin/depmod
@@ -56,12 +56,12 @@ Requires(post,postun):	/sbin/depmod
 %description -n kernel-misc-syscalltrack
 syscalltrack Linux kernel modules.
 
-%description -n kernel-misc-syscalltrack -l pl
-Modu³y j±dra Linuksa syscalltrack.
+%description -n kernel-misc-syscalltrack -l pl.UTF-8
+ModuÅ‚y jÄ…dra Linuksa syscalltrack.
 
 %package -n kernel-smp-misc-syscalltrack
 Summary:	syscalltrack Linux SMP kernel module
-Summary(pl):	Modu³ j±dra Linuksa SMP syscalltrack
+Summary(pl.UTF-8):   ModuÅ‚ jÄ…dra Linuksa SMP syscalltrack
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_smp}
 Requires(post,postun):	/sbin/depmod
@@ -69,8 +69,8 @@ Requires(post,postun):	/sbin/depmod
 %description -n kernel-smp-misc-syscalltrack
 syscalltrack Linux SMP kernel modules.
 
-%description -n kernel-smp-misc-syscalltrack -l pl
-Modu³y j±dra Linuksa SMP syscalltrack.
+%description -n kernel-smp-misc-syscalltrack -l pl.UTF-8
+ModuÅ‚y jÄ…dra Linuksa SMP syscalltrack.
 
 %prep
 %setup -q
